@@ -11,7 +11,12 @@
         int day = int.Parse(Console.ReadLine());
 
         // Write code below this line
-
+        string url = $"http://numbersapi.com/11/6/date"
+        HttpClient client = new HttpClient();
+        HttpResponseMessage response = await client.GetAsync(url);
+        string responseContent = await response.Content.ReadAsStringAsync();
+        Console.WriteLine("Fact: " + responseContent);
+            
         // Write code above this line
     }
 }
